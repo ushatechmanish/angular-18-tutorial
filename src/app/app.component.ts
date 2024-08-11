@@ -5,8 +5,15 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template:`
+  Hello world
+  `,
+  styles:
+  `
+  :host{
+    color : blue;
+  }
+  `
 })
 export class AppComponent {
   title = 'angula-18-tutorial';
