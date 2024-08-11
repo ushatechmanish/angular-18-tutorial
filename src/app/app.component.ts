@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   template:`
-  Hello world
+  Hello {{ city }}
   `,
   styles:
   `
@@ -17,4 +17,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angula-18-tutorial';
+   city = 'San Francisco';
+   // The above line is equivalent to the following line  
+  // city: string ='San Fransisco';
+
 }
