@@ -7,8 +7,16 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template:`
-  Hello {{ city }} , 
-  <app-user></app-user>
+    <!-- @if (isLoggedIn) {
+      <p>Welcome back friend </p>
+    } -->
+      @if (isServerRunning) {
+          The server is running 
+      }
+      @else {
+          The server is not running
+      }
+
   `,
   styles:
   `
@@ -18,9 +26,7 @@ import { UserComponent } from './user/user.component';
   `
 })
 export class AppComponent {
-  title = 'angula-18-tutorial';
-   city = 'San Francisco';
-   // The above line is equivalent to the following line  
-  // city: string ='San Fransisco';
+// isLoggedIn = true;
+isServerRunning: boolean = true;
 
 }
