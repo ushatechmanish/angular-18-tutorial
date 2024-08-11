@@ -7,7 +7,10 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template: `
-  <button (click)="greet()">greet</button>
+  <section (mouseover)="onMouseOver()">
+    There is a secret message for you .Hover to reveal
+    <p> {{ secretMessage }}</p>
+  </section>
   `,
   styles:
     `
@@ -22,7 +25,7 @@ export class AppComponent
   constructor(){
 
   }
-  greet(){
-    console.log("Hi There");
+  onMouseOver(){
+    this.secretMessage=`secret message`;
   }
 }
