@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { ChildComponent } from "./child/child.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserComponent],
+  imports: [RouterOutlet, UserComponent, ChildComponent],
   template: `
-  <app-user [username]="occupation"></app-user>
+  <app-child  (incrementCountEvent)="addItemEvent($event)"></app-child>
+  The counter is {{ count }}
   `,
   styles:
     `
@@ -18,12 +20,11 @@ import { UserComponent } from './user/user.component';
 })
 export class AppComponent 
 {
-  secretMessage: string = "";
-  occupation:string ="Software Engineer";
+  count: number= 1;
   constructor(){
 
   }
-  onMouseOver(){
-    this.secretMessage=`secret message`;
+  addItemEvent(counter: number){
+    this.count=counter;
   }
 }
