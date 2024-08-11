@@ -9,8 +9,12 @@ import { CommentsComponent } from "./comments/comments.component";
   standalone: true,
   imports: [RouterOutlet, UserComponent, ChildComponent, CommentsComponent],
   template: `
-  <app-user></app-user>
-  
+  <nav>
+      <a href="/">Child</a>
+      |
+      <a href="/user">User</a>
+    </nav>
+    <router-outlet/>
   `,
   styles:
     `
