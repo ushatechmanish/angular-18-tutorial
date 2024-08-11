@@ -6,27 +6,20 @@ import { UserComponent } from './user/user.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, UserComponent],
-  template:`
-    <!-- @if (isLoggedIn) {
-      <p>Welcome back friend </p>
-    } -->
-      @if (isServerRunning) {
-          The server is running 
-      }
-      @else {
-          The server is not running
-      }
-
+  template: `
+    @for (item of operatingSystems; track item.id) {
+      {{item.name}}
+    }
   `,
   styles:
-  `
+    `
   :host{
     color : blue;
   }
   `
 })
 export class AppComponent {
-// isLoggedIn = true;
-isServerRunning: boolean = true;
+
+  operatingSystems = [{ id: 'win', name: 'Windows' }, { id: 'osx', name: 'MacOS' }, { id: 'linux', name: 'Linux' }];
 
 }
