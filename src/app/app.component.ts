@@ -7,10 +7,7 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template: `
-  <section (mouseover)="onMouseOver()">
-    There is a secret message for you .Hover to reveal
-    <p> {{ secretMessage }}</p>
-  </section>
+  <app-user [username]="occupation"></app-user>
   `,
   styles:
     `
@@ -22,6 +19,7 @@ import { UserComponent } from './user/user.component';
 export class AppComponent 
 {
   secretMessage: string = "";
+  occupation:string ="Software Engineer";
   constructor(){
 
   }

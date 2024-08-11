@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
   standalone: true,
   imports: [],
-  template: `Hello {{ username }}`,
+  template: `Hello {{ username }} `,
   styleUrl: './user.component.css'
 })
-export class UserComponent {
-  username: string = 'Manish Chauhan';
+export class UserComponent 
+{
+  @Input() username: string = '';
 }
