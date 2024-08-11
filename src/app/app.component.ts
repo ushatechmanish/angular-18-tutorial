@@ -7,8 +7,7 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template: `
-   <img alt="image" [src]="imageURL" >
-
+  <div [contentEditable]="isEditable"></div>
   `,
   styles:
     `
@@ -18,5 +17,5 @@ import { UserComponent } from './user/user.component';
   `
 })
 export class AppComponent {
-  imageURL = 'image.png';
+  isEditable: boolean = true;
 }
