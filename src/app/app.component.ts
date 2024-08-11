@@ -7,8 +7,7 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template: `
-  <button (click)="onClick()">Click for secret message  </button>
-  <p>{{ secretMessage }}</p>
+  <button (click)="greet()">greet</button>
   `,
   styles:
     `
@@ -23,7 +22,7 @@ export class AppComponent
   constructor(){
 
   }
-  onClick(){
-    this.secretMessage='secret message on click';
+  greet(){
+    console.log("Hi There");
   }
 }
