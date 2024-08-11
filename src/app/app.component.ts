@@ -7,7 +7,8 @@ import { UserComponent } from './user/user.component';
   standalone: true,
   imports: [RouterOutlet, UserComponent],
   template: `
-  <div [contentEditable]="isEditable"></div>
+  <button (click)="onClick()">Click for secret message  </button>
+  <p>{{ secretMessage }}</p>
   `,
   styles:
     `
@@ -16,6 +17,13 @@ import { UserComponent } from './user/user.component';
   }
   `
 })
-export class AppComponent {
-  isEditable: boolean = true;
+export class AppComponent 
+{
+  secretMessage: string = "";
+  constructor(){
+
+  }
+  onClick(){
+    this.secretMessage='secret message on click';
+  }
 }
